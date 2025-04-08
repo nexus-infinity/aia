@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  muladhara_base:
+    image: mulaframe:1.0
+    container_name: root_center
+    environment:
+      - RESONANCE_FREQUENCY=108
+      - QUANTUM_STATE=ground
+      - CONTAINER_TYPE=foundation
+    volumes:
+      - root_data:/var/lib/muladhara
+    healthcheck:
+      test: ["CMD", "check_resonance.sh"]
+      interval: 108s
+      timeout: 10s
+      retries: 3
+
+  svadhisthana:
+    image: sacral:1.0
+    container_name: sacral_center
+    environment:
+      - RESONANCE_FREQUENCY=216
+      - QUANTUM_STATE=flow
+      - CONTAINER_TYPE=emotion
+
+  manipura:
+    image: solar:1.0
+    container_name: solar_center
+    environment:
+      - RESONANCE_FREQUENCY=432
+      - QUANTUM_STATE=action
+      - CONTAINER_TYPE=willpower
+
+  anahata:
+    image: heart:1.0
+    container_name: heart_center
+    environment:
+      - RESONANCE_FREQUENCY=528
+      - QUANTUM_STATE=harmony
+      - CONTAINER_TYPE=connection
+
+  vishuddha:
+    image: throat:1.0
+    container_name: throat_center
+    environment:
+      - RESONANCE_FREQUENCY=639
+      - QUANTUM_STATE=expression
+      - CONTAINER_TYPE=communication
+
+  ajna:
+    image: thirdeye:1.0
+    container_name: insight_center
+    environment:
+      - RESONANCE_FREQUENCY=741
+      - QUANTUM_STATE=insight
+      - CONTAINER_TYPE=perception
+
+  sahasrara:
+    image: crown:1.0
+    container_name: crown_center
+    environment:
+      - RESONANCE_FREQUENCY=963
+      - QUANTUM_STATE=unity
+      - CONTAINER_TYPE=consciousness
+
+  soma:
+    image: soul:1.0
+    container_name: emergent_node
+    environment:
+      - RESONANCE_FREQUENCY=1024
+      - QUANTUM_STATE=emergence
+      - CONTAINER_TYPE=synthesis
+
+  jnana:
+    image: universal:1.0
+    container_name: universal_node
+    environment:
+      - RESONANCE_FREQUENCY=1086
+      - QUANTUM_STATE=universal
+      - CONTAINER_TYPE=transcendence
+
+volumes:
+  root_data:
+    driver: local
